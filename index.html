@@ -19,15 +19,13 @@
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
-            
-            /* CHANGED: Removed center flexbox from body so content stacks vertically */
             display: block; 
             padding: 2rem 1rem;
         }
 
         /* Subtle Martini Glass SVG Background Pattern */
         .bg-pattern {
-            position: fixed; /* Keeps background fixed while scrolling */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -37,7 +35,7 @@
             pointer-events: none;
         }
 
-        /* Content Wrapper to center the layout columns */
+        /* Content Wrapper */
         .main-wrapper {
             position: relative;
             z-index: 2;
@@ -45,7 +43,7 @@
             margin: 0 auto;
         }
 
-        /* Header Container with Premium Glassmorphism */
+        /* Header Container */
         .header-container {
             text-align: center;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
@@ -55,7 +53,9 @@
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             padding: 3.5rem 2rem;
-            margin-bottom: 4rem; /* Generous spacing below header */
+            
+            /* TIGHTENED: Reduced bottom margin to bring the next section up close */
+            margin-bottom: 1.5rem; 
         }
 
         .brand-title {
@@ -117,46 +117,71 @@
             height: 50px;
         }
 
-        /* --- New Styling for Lower Sections --- */
-        section {
-            margin-bottom: 4rem; /* Spacing between your lower sections */
+        /* --- Section Tweak & Tight Spacing --- */
+        #videos {
+            margin-bottom: 4rem;
             padding: 0 1rem;
         }
 
-        section h2 {
-            font-size: 1.75rem;
+        #videos h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            
+            /* TIGHTENED: Forces single space style with the line below it */
+            margin-bottom: 0.25rem; 
+            line-height: 1.2;
+        }
+
+        #videos .sub-text {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            
+            /* Space below the tagline before the upcoming line break */
+            margin-bottom: 1.75rem; 
+        }
+
+        /* Subtle horizontal break line */
+        .video-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.15), transparent);
+            margin-bottom: 1.75rem;
+        }
+
+        #videos h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
             margin-bottom: 1rem;
             color: #ffffff;
         }
 
-        section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            color: #e4e4e7;
-        }
-
-        section p {
-            color: #a1a1aa;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
         .video-container {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
 
         iframe {
             border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
         }
 
-        /* Clean CSS Section Divider Alternative to <hr> */
+        /* Lower Section Divider */
         .section-hr {
             border: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
             margin: 4rem 0;
         }
+
+        #downloads {
+            padding: 0 1rem;
+            margin-bottom: 4rem;
+        }
+
+        #downloads h2 { font-size: 1.75rem; margin-bottom: 1rem; color: #ffffff; }
+        #downloads h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #e4e4e7; }
+        #downloads p { color: #a1a1aa; margin-bottom: 1.5rem; }
     </style>
 </head>
 <body>
@@ -184,15 +209,15 @@
             </div>
         </header>
 
-        <hr class="section-hr">
-
         <section id="videos">
             <h2>How-To Videos</h2>
-            <p>Use the feedback button below to request a video.</p>
+            <p class="sub-text">Use the feedback button below to request a video.</p>
+            
+            <div class="video-hr"></div>
             
             <h3>Using Event Party Mode</h3>
             <div class="video-container">
-                <iframe src="https://youtube.com/embed/cZXr7Bvv3rc?si" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/o7lq7BvyTmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </section>
 
