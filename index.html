@@ -1,38 +1,177 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MADBAR - Cocktail & Bar Management App</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <title>MADBAR Header</title>
     <style>
-        body { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
-                {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 60 60'%3E%3Cpath d='M10 15 L30 35 L50 15 Z M30 35 L30 50 M20 50 L40 50 M27 23 A 2 2 0 1 1 27.01 23' fill='none' stroke='%23000000' stroke-width='1.5' stroke-opacity='0.03' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: repeat;}
-        .hero { text-align: center; padding: 3rem 0; }
-        .download-btn { display: inline-block; background: #0076FF; color: white; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 1rem; }
-        .download-btn:hover { background: #0056b3; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; margin-bottom: 2rem; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
-        .card { border: 1px solid #ddd; padding: 1.5rem; border-radius: 8px; }
+        /* Base Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0d0d11;
+            color: #f5f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Subtle Martini Glass SVG Background Pattern */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.03; /* Extremely subtle watermark effect */
+            pointer-events: none;
+        }
+
+        /* Header Container with Premium Glassmorphism */
+        .header-container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            width: 90%;
+            margin: 2rem auto;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Typography Styling */
+        .brand-title {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+        }
+
+        .brand-tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            font-style: italic;
+            color: #e4e4e7;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .main-description {
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #a1a1aa;
+            margin-bottom: 2rem;
+        }
+
+        /* Divider Line */
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            margin: 2rem auto;
+        }
+
+        .value-proposition {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .features-list {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #71717a;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* App Store Button Styling & Glow */
+        .cta-container {
+            display: inline-block;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .cta-container:hover {
+            transform: translateY(-3px);
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
+        }
+
+        .app-store-btn {
+            display: block;
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 768px) {
+            .brand-title { font-size: 2.75rem; }
+            .brand-tagline { font-size: 1.2rem; }
+            .main-description { font-size: 1.1rem; }
+            .header-container { padding: 2.5rem 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>MADBAR</h1>
-        <p>Make A Drink... Or Two! </p>
-        <p>Your ultimate digital cocktail companion & bar management tool. </p>
-        <p>Our intent is 99 cents is all you'll ever spend on this app. </p>
-        <p>No Subscriptions, No Ads, No Charge for Recipe packs. </p>
-        <a href="YOUR_APP_STORE_URL" target="_blank" style="display: inline-block;">
-    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276550400&h=752c268a7e025a1dafd0ba6bfe14bbaf" alt="Download on the App Store" style="height: 40px; width: auto;">
-</a>
+    <svg class="bg-pattern" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+        <g fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 25 25 L 55 25 L 40 43 Z"/>
+            <line x1="40" y1="43" x2="40" y2="58"/>
+            <line x1="32" y1="58" x2="48" y2="58"/>
+            <line x1="30" y1="20" x2="43" y2="35" stroke-width="1"/>
+        </g>
+    </svg>
+
+    <header class="header-container">
+        <h1 class="brand-title">MADBAR</h1>
+        <p class="brand-tagline">Make A Drink... Or Two!</p>
+        
+        <p class="main-description">Your ultimate digital cocktail companion & bar management tool.</p>
+        
+        <div class="divider"></div>
+        
+        <p class="value-proposition">Our intent is 99 cents is all you'll ever spend on this app.</p>
+        <p class="features-list">No Subscriptions • No Ads • No Charge for Recipe Packs</p>
+        
+        <div class="cta-container">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="app-store-btn" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                    <path d="M121.15 40h-107.3c-7.63 0-13.85-6.22-13.85-13.85v-12.3c0-7.63 6.22-13.85 13.85-13.85h107.3c7.63 0 13.85 6.22 13.85 13.85v12.3c0 7.63-6.22 13.85-13.85 13.85z"/>
+                    <path fill="#fff" d="M18.23 21.17c-.03-3.34 2.73-4.95 2.86-5.03-1.56-2.27-3.98-2.58-4.84-2.61-2.06-.21-4.03 1.21-5.08 1.21-1.04 0-2.66-1.19-4.38-1.16-2.27.03-4.36 1.32-5.53 3.35-2.36 4.1-0.6 10.15 1.69 13.45 1.12 1.61 2.44 3.42 4.19 3.35 1.69-.07 2.33-1.1 4.37-1.1s2.62 1.1 4.38 1.06c1.8-.03 2.96-1.64 4.06-3.26 1.27-1.86 1.8-3.66 1.83-3.75-.04-.02-3.53-1.35-3.55-5.37zm-2.92-10.45c.92-1.12 1.54-2.68 1.37-4.23-1.33.05-2.95.89-3.9 2.01-.81.94-1.52 2.53-1.33 4.05 1.48.11 3-.72 3.86-1.83z"/>
+                    <path fill="#fff" d="M34.42 28.5h2.24l-4.9-12.64h-2.38l-4.9 12.64h2.24l1.12-3.08h5.46zm-5.63-4.82l2.11-5.83 2.11 5.83zm17.9 1.76c2.56 0 4.14-1.44 4.14-4.14v-5.43h-2.04v5.43c0 1.51-.77 2.27-2.1 2.27-1.3 0-2.07-.76-2.07-2.27v-5.43h-2.04v5.43c0 2.7 1.57 4.14 4.11 4.14zm9.32 2.88V20.24c0-2.84 1.76-4.51 4.41-4.51 2.59 0 4.19 1.58 4.19 4.37v8.4h-2.04V20.31c0-1.69-.87-2.55-2.24-2.55-1.4 0-2.28.87-2.28 2.55v8.19zm17.51.18c4.09 0 6.94-3.02 6.94-6.62s-2.86-6.62-6.94-6.62c-4.09 0-6.94 3.02-6.94 6.62s2.86 6.62 6.94 6.62zm0-1.85c-2.8 0-4.82-2.02-4.82-4.77s2.02-4.77 4.82-4.77 4.82 2.02 4.82 4.77-2.02 4.77-4.82 4.77zm15.43 1.67V15.91h2.04V28.5zm11.96.18c4.09 0 6.94-3.02 6.94-6.62s-2.86-6.62-6.94-6.62c-4.09 0-6.94 3.02-6.94 6.62s2.86 6.62 6.94 6.62zm0-1.85c-2.8 0-4.82-2.02-4.82-4.77s2.02-4.77 4.82-4.77 4.82 2.02 4.82 4.77-2.02 4.77-4.82 4.77zm13.1 1.67V20.24c0-2.84 1.76-4.51 4.41-4.51 2.59 0 4.19 1.58 4.19 4.37v8.4h-2.04V20.31c0-1.69-.87-2.55-2.24-2.55-1.4 0-2.28.87-2.28 2.55v8.19zm20.89 0v-4.11h-5.26v-6.68h4.94v-1.8h-4.94V17.7h5.26v-1.79h-7.3v12.59zM34.96 11.75c1.47 0 2.48-.9 2.48-2.24 0-1.36-1.01-2.25-2.48-2.25h-3.32v4.49zm-3.32-5.69h3.32c2.25 0 3.79 1.34 3.79 3.45 0 2.09-1.54 3.44-3.79 3.44h-3.32V13h-1.32V4.86h1.32zm12.55 4.54c-.21-1.12-1.22-1.88-2.67-1.88-1.55 0-2.63.95-2.63 2.15 0 1.13.91 1.76 2.41 2.04l.95.18c2.02.38 3.05 1.25 3.05 2.87 0 2.01-1.67 3.39-4.04 3.39-2.27 0-3.83-1.18-4.04-3.1h1.36c.18 1.2 1.16 1.93 2.68 1.93 1.66 0 2.67-.88 2.67-2.19 0-1.23-1.02-1.78-2.49-2.07l-.92-.19c-1.86-.37-2.91-1.24-2.91-2.81 0-1.87 1.54-3.33 3.96-3.33 2.1 0 3.51 1.12 3.82 2.92zm6.65-2.18h2.09V13h1.3v-4.39h2.09V7.47h-5.48zm12.98 4c0 2.66-1.84 4.32-4.49 4.32-2.66 0-4.5-1.66-4.5-4.32 0-2.65 1.84-4.31 4.5-4.31 2.65 0 4.49 1.66 4.49 4.31zm-7.65 0c0 1.93 1.3 3.17 3.16 3.17 1.85 0 3.15-1.24 3.15-3.17 0-1.92-1.3-3.16-3.15-3.16-1.86 0-3.16 1.24-3.16 3.16zm12.72-4.31c1.47 0 2.47.74 2.7 1.93h-5.37c.22-1.19 1.22-1.93 2.67-1.93zm2.74 2.88c-.04-2.09-1.46-3.41-3.61-3.41-2.28 0-3.86 1.66-3.86 4.31 0 2.67 1.6 4.32 4.02 4.32 1.91 0 3.25-.97 3.56-2.53h-1.36c-.24.89-.99 1.39-2.2 1.39-1.73 0-2.69-.98-2.72-2.58h6.21v-.45z"/>
+                </svg>
+            </a>
+        </div>
     </header>
 
+</body>
+
+    
     <hr>
 
     <section id="videos">
