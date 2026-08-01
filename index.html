@@ -163,7 +163,98 @@
                 background: linear-gradient(90deg, rgba(212,175,55,0.5), transparent);
             }
         }
+/* ==========================================================================
+   ANNOUNCEMENTS & ROADMAP BANNER STYLES
+   ========================================================================== */
+.announcement-banner {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 20px;
+    padding: 1.75rem 2rem;
+    margin: 0 1rem 3rem 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
 
+.announcement-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge-new {
+    background: #d4af37;
+    color: #0d0d11;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+}
+
+.announcement-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.announcement-text {
+    font-size: 0.98rem;
+    color: #e4e4e7;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Roadmap Grid Inside Banner */
+.roadmap-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.roadmap-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: #a1a1aa;
+}
+
+.roadmap-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #d4af37;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+
+<!-- Announcements & Roadmap Banner -->
+<div class="announcement-banner">
+    <div class="announcement-header">
+        <span class="badge-new">What's New</span>
+        <h2 class="announcement-title">Latest Updates & What We're Building</h2>
+    </div>
+    
+    <p class="announcement-text">
+        Version 2.0 is now live! We've overhauled the recipe builder and added instant unit conversions. We are currently working hard on multi-device sync and dark/light theme options coming soon.
+    </p>
+
+    <div class="roadmap-list">
+        <div class="roadmap-item">
+            <span class="roadmap-dot"></span>
+            <strong>In Progress:</strong> Cloud Backup & Sync
+        </div>
+        <div class="roadmap-item">
+            <span class="roadmap-dot"></span>
+            <strong>Coming Next:</strong> Custom Flavor Profiles
+        </div>
+    </div>
+</div>
         /* ==========================================================================
            3x3 FEATURES GRID STYLES
            ========================================================================== */
